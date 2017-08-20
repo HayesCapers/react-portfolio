@@ -11,10 +11,12 @@ body{
 .icon-wrapper{
 	float: right;
 	margin: 10px 10px 0 0;
+	z-index: 10;
 }
 
 .icon-wrapper a{
 	color: #AAA;
+	z-index: 10;
 }
 
 .fa{
@@ -30,7 +32,7 @@ body{
 	height: 100vh;
 	width: 1000px;
 	/* background-image: url('../images/background.png'); */
-	background-size: cover;
+	/* background-size: cover; */
 	overflow: hidden
 }
 

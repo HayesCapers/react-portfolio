@@ -8,33 +8,14 @@ import Parallax from 'parallax-js'
 class Home extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			parallax: {}
-		}
-		
 	}
 
 	componentDidMount() {
-		var scene = $('#scene').get(0);
-		var parallax = new Parallax(scene, {
-			relativeInput: true,
-			clipRelativeInput: true,
-			// hoverOnly: true,
-			inputElement: $('scene'),
-			scalarX: 10,
-			scalarY: 10,
-			frictionX: 1,
-			frictionY: 0,
-			originX: 1,
-			originY: .5,
-		})
-		this.setState({
-			parallax: parallax
-		})
+		this.parallax = new Parallax(this.scene)
 	}	
 
-	moveFace(){
-		this.state.parallax.enable()
+	componentWillUnmount() {
+		this.parallax.disable()		
 	}	
 
 	render(){
@@ -48,12 +29,8 @@ class Home extends Component {
 					<a href="https://www.youtube.com/channel/UCLlTlqBWyRZkCcG1aCLAV2Q"><span className="fa">&#xf166;</span></a>
 				</div>
 
-				<div className="background-wrapper">
-
-				</div>
-
 				<div className="profile-wrapper hidden-xs" onMouseEnter={this.moveFace}>
-					<div id="scene" data-hover-only="true">
+					<div id="scene" data-hover-only="true" ref={el => this.scene = el}>
 						<div className="layer1 layer" data-depth="0.10"><img id="comp1" src="/images/composite-1.png"/></div>
 						<div className="layer1 layer" data-depth="0.20"><img id="comp2" src="/images/composite-2.png"/></div>
 						<div className="layer1 layer" data-depth="0.30"><img id="comp3" src="/images/composite-3.png"/></div>
