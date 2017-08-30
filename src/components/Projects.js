@@ -47,13 +47,19 @@ class Projects extends Component {
 		return(
 			<div className='body-wrapper'>
 				{this.loadScript}
-				<div className='navbar'>
-					<img src='/images/mini-logo-icon.png' />
-				</div>
+				<Link to='/'>
+					<div className='navbar'>
+						<img src='/images/mini-logo-icon.png' />
+					</div>
+				</Link>
 
 				<div className='main-wrapper' onMouseEnter={this.mouseOn} onMouseLeave={this.mouseOff}>
-					<svg id="layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 798.04 470.77">
-					  <polyline className="cls-1" points="797.67 432.73 797.67 0.38 0.38 0.38 0.38 459.93 729.25 459.93 735.64 447.32 736.55 469.21 742.02 457.35 757.52 457.35"/>
+					<svg className="border-line" id="layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 798.04 470.77">
+					  <polyline id="line-1" className="cls-1" points="797.67 432.73 797.67 0.38 0.38 0.38 0.38 459.93 729.25 459.93 735.64 447.32 736.55 469.21 742.02 457.35 757.52 457.35"/>
+					</svg>
+
+					<svg className="border-line-2" id="layer_2" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 798.04 470.77">
+					  <polyline id="line-2" className="cls-1" points="797.67 432.73 797.67 0.38 0.38 0.38 0.38 459.93 729.25 459.93 735.64 447.32 736.55 469.21 742.02 457.35 757.52 457.35"/>
 					</svg>
 
 					<div className="wnd-main" id="wnd-1"><img src={`/images/${images[currPrj]}`} /></div>

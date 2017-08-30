@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 // import { Parallax } from '../script/parallax.min.js';
 import $ from 'jquery';
-import Parallax from 'parallax-js'
+import Parallax from 'parallax-js';
+import { onHoverHide, offHoverShow } from '../Mods';
 
 
 class Home extends Component {
@@ -16,9 +17,17 @@ class Home extends Component {
 
 	componentWillUnmount() {
 		this.parallax.disable()		
-	}	
+	}
+
+	mouseOn() {
+
+	}
 
 	render(){
+
+		const projArr = ['.contact-nav', '#about-nav'];
+		const contactArr = ['#roje-power', '#ts-power', '#about-nav'];
+		const aboutArr = ['.project-nav', '#ont-power', '#ct-power'];
 
 		return(
 			<div className='main' >
@@ -46,18 +55,33 @@ class Home extends Component {
 				<div className="name-wrapper col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-4">
 					<img src="images/name.png"/>
 					<Link to='/projects/0'>
-						<div id='project-nav-wrapper' className="col-xs-2 col-sm-2">
+						<div 
+							id='project-nav-wrapper' 
+							className="col-xs-2 col-sm-2"
+							onMouseEnter={() => onHoverHide(projArr)}
+							onMouseLeave={() => offHoverShow(projArr)}
+						>
 							<div className="project-nav" id="roje-power">ROJE</div>
 							<div className="project-nav" id="c-power">C</div>
 							<div className="project-nav" id="ts-power">TS</div>
 						</div>
 					</Link>
-					<div id='contact-nav-wrapper' className="col-xs-2 col-sm-2">
+					<div 
+						id='contact-nav-wrapper' 
+						className="col-xs-2 col-sm-2"
+						onMouseEnter={() => onHoverHide(contactArr)}
+						onMouseLeave={() => offHoverShow(contactArr)}
+					>
 						<span className="contact-nav" id="ont-power">ONT</span>
 						<span className="contact-nav" id="a-power">A</span>
 						<span className="contact-nav" id="ct-power">CT</span>
 					</div>
-					<div id='about-nav-wrapper' className="col-xs-2 col-sm-2">
+					<div 
+						id='about-nav-wrapper' 
+						className="col-xs-2 col-sm-2"
+						onMouseEnter={() => onHoverHide(aboutArr)}
+						onMouseLeave={() => offHoverShow(aboutArr)}
+					>
 						<div id="about-nav">BOUT</div>
 					</div>
 				</div>
