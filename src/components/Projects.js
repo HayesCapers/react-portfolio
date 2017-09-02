@@ -1,34 +1,35 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import ProjectContent from './ProjectContent';
-import $ from 'jquery';
+import ProjectNavIcon from './ProjectNavIcon';
 
 
 class Projects extends Component {
 	constructor(props) {
 		super(props);
+
+		this.state = {
+			projectId: this.props.match.params.prjId,
+			enabledProjectId: 1,
+		}
 	}
 
-	
-
 	render() {
+
 		return(
 			<div className='body-wrapper'>
-				{this.loadScript}
 				<Link to='/'>
 					<div className='navbar'>
 						<img src='/images/mini-logo-icon.png' />
 					</div>
 				</Link>
 
-				<ProjectContent projId={this.props.match.params.prjId}/>
+				<ProjectContent projId={this.state.projectId} />
 
 				<div className='prj-nav-wrapper'>	
-					<div className='prj-nav-button'>
-						<div className='nums' id='num1'>1</div>
-						<img className='slash' src='/images/slash.png'/>
-						<div className='nums' id='num2'>3</div>
-					</div>
+					<ProjectNavIcon projectNumber={1} enabled={this.state.enabledProjectId}/>
+					<ProjectNavIcon projectNumber={2} enabled={this.state.enabledProjectId}/>
+					<ProjectNavIcon projectNumber={3} enabled={this.state.enabledProjectId}/>
 				</div>
 			</div>
 		)
@@ -36,3 +37,6 @@ class Projects extends Component {
 }
 
 export { Projects }
+
+
+// Make sure to do media queries for smaller screen sizes
