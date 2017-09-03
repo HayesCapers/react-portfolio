@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-// import { Parallax } from '../script/parallax.min.js';
 import $ from 'jquery';
 import Parallax from 'parallax-js';
 import { onHoverHide, offHoverShow } from '../Mods';

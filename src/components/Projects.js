@@ -12,12 +12,23 @@ class Projects extends Component {
 			projectId: this.props.match.params.prjId,
 			enabledProjectId: 1,
 		}
+
+		this.changeProject = this.changeProject.bind(this)
+	}
+
+	changeProject(projectId) {
+		this.setState({
+			projectId
+		});
 	}
 
 	render() {
 
+		console.log(this.state.projectId)
+
 		return(
 			<div className='body-wrapper'>
+
 				<Link to='/'>
 					<div className='navbar'>
 						<img src='/images/mini-logo-icon.png' />
@@ -27,9 +38,28 @@ class Projects extends Component {
 				<ProjectContent projId={this.state.projectId} />
 
 				<div className='prj-nav-wrapper'>	
-					<ProjectNavIcon projectNumber={1} enabled={this.state.enabledProjectId}/>
-					<ProjectNavIcon projectNumber={2} enabled={this.state.enabledProjectId}/>
-					<ProjectNavIcon projectNumber={3} enabled={this.state.enabledProjectId}/>
+
+						<a onClick={() => this.changeProject(0)}>
+							<ProjectNavIcon 
+								projectNumber={1} 
+								enabled={this.state.enabledProjectId}
+							/>
+						</a>	
+
+						<a onClick={() => this.changeProject(1)}>
+							<ProjectNavIcon 
+								projectNumber={2} 
+								enabled={this.state.enabledProjectId}
+							/>
+						</a>	
+
+						<a onClick={() => this.changeProject(2)}>
+							<ProjectNavIcon 
+								projectNumber={3} 
+								enabled={this.state.enabledProjectId}
+							/>
+						</a>	
+						
 				</div>
 			</div>
 		)
