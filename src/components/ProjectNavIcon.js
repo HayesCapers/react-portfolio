@@ -41,4 +41,4 @@ class ProjectNavIcon extends Component {
 	}
 }
 
-export default ProjectNavIcon
+export { ProjectNavIcon }

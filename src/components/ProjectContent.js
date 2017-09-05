@@ -71,5 +71,5 @@ class ProjectContent extends Component {
 }
 
 
-export default ProjectContent
+export { ProjectContent }
 

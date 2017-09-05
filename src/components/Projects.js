@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import ProjectContent from './ProjectContent';
-import ProjectNavIcon from './ProjectNavIcon';
+import { ProjectNavIcon, ProjectContent, Bars } from './';
 
 
 class Projects extends Component {
@@ -28,6 +27,9 @@ class Projects extends Component {
 
 		return(
 			<div className='body-wrapper'>
+
+				<Bars colorStyle={'#6567B4'} barWidth={500}/>
+				<Bars colorStyle={'#01F3FE'} barWidth={400}/>
 
 				<Link to='/'>
 					<div className='navbar'>
@@ -61,6 +63,7 @@ class Projects extends Component {
 						</a>	
 						
 				</div>
+
 			</div>
 		)
 	}
