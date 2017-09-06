@@ -23,8 +23,6 @@ class Projects extends Component {
 
 	render() {
 
-		console.log(this.state.projectId)
-
 		return(
 			<div className='body-wrapper'>
 

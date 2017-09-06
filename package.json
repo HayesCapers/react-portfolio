@@ -9,6 +9,7 @@
     "loadjs": "^3.5.0",
     "parallax-js": "^3.0.0",
     "react": "^15.6.1",
+    "react-css-transition": "^0.7.4",
     "react-dom": "^15.6.1",
     "react-router-dom": "^4.1.2"
   },

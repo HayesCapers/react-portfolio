@@ -14,7 +14,8 @@ class Bars extends Component {
 		for (let i = 0; i < 100; i++){
 			var randomWidth = Math.floor(Math.random() * 300 + this.props.barWidth);
 			var randomHeight = Math.floor(Math.random() * 15 + 5);
-			htmlBars.push(<Bar colorStyle={this.props.colorStyle} key={i} id={i} randomWidth={randomWidth} randomHeight={randomHeight}/>)
+			var randomVelo = Math.floor(Math.random() * 500 + 50)
+			htmlBars.push(<Bar velo={randomVelo} colorStyle={this.props.colorStyle} key={i} id={i} randomWidth={randomWidth} randomHeight={randomHeight}/>)
 		}
 
 		return(
@@ -26,4 +27,6 @@ class Bars extends Component {
 }
 
 export { Bars };
+
+
 
